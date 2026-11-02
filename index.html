@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impulso · Privacidad y cuenta</title>
+<meta name="description" content="Política de privacidad de Impulso y cómo eliminar tu cuenta.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FAF9FF;--ink:#1B1640;--muted:#5C5878;--violet:#6D4AFF;--deep:#22195C;--lilac:#EFEBFF;--line:#E4DFF5;--red:#D93A4A;--card:#fff}
+@media (prefers-color-scheme:dark){:root{--paper:#100D22;--ink:#ECE9FA;--muted:#A6A1C2;--violet:#A48BFF;--deep:#1A1347;--lilac:#211A47;--line:#2B2452;--red:#FF6B78;--card:#171332}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pulse path{animation:none!important;stroke-dashoffset:0!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.7 "DM Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--violet)}
+a:focus-visible,button:focus-visible{outline:3px solid #B9A6FF;outline-offset:2px;border-radius:8px}
+h1,h2,h3{font-family:"Sora",system-ui,sans-serif;letter-spacing:-.02em;line-height:1.2}
+.top{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;max-width:1120px;margin:0 auto;padding:20px 20px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-family:"Sora",sans-serif;font-weight:700;font-size:20px;letter-spacing:.02em}
+.mark{width:36px;height:36px}
+.seg{display:flex;background:rgba(255,255,255,.12);border-radius:999px;padding:4px}
+.seg button{border:0;background:transparent;color:#fff;font:600 14px "DM Sans",sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;opacity:.8}
+.seg button.on{background:#fff;color:var(--deep);opacity:1}
+[data-l]{display:none}body.es [data-l="es"],body.en [data-l="en"]{display:block}
+.hero{position:relative;background:radial-gradient(120% 140% at 85% 0%,#5B3BF0 0%,#2A1E78 45%,#17113F 100%);color:#fff;overflow:hidden;padding:120px 20px 96px}
+.pulse{position:absolute;left:0;right:0;bottom:22px;width:100%;height:120px;opacity:.55}
+.pulse path{fill:none;stroke:#B9A6FF;stroke-width:2.5;stroke-linejoin:round;stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 2.2s .2s cubic-bezier(.6,0,.2,1) forwards;vector-effect:non-scaling-stroke}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero-inner{position:relative;max-width:1120px;margin:0 auto}
+.hero h1{font-size:clamp(34px,6vw,58px);font-weight:700;margin:0 0 14px;max-width:14ch}
+.lead{font-size:clamp(17px,2.2vw,20px);color:#D9D2FF;max-width:52ch;margin:0 0 26px}
+.promises{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-wrap:wrap;gap:10px 22px}
+.promises li{display:flex;align-items:center;gap:8px;font-weight:500}
+.promises svg{width:22px;height:22px;padding:3px;border-radius:50%;background:rgba(255,255,255,.16);color:#9CF5CF}
+.btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px}
+.btn.light{background:#fff;color:var(--deep)}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.jump{display:flex;flex-wrap:wrap;gap:12px}
+.layout{max-width:1120px;margin:0 auto;padding:48px 20px 80px;display:grid;grid-template-columns:240px 1fr;gap:56px}
+.toc{position:sticky;top:24px;align-self:start;font-size:15px}
+.toc-h{font-weight:700;margin:0 0 10px;color:var(--ink)}
+.toc ol{list-style:none;padding:0;margin:0 0 16px;border-left:2px solid var(--line)}
+.toc li a{display:block;padding:5px 0 5px 14px;color:var(--muted);text-decoration:none;margin-left:-2px;border-left:2px solid transparent}
+.toc li a:hover{color:var(--violet);border-left-color:var(--violet)}
+.toc-del{display:inline-block;color:var(--red);font-weight:600;text-decoration:none;padding-left:16px}
+.content{min-width:0;max-width:720px}
+.doc{scroll-margin-top:20px;margin-bottom:64px}
+.doc>h2{font-size:clamp(28px,4vw,36px);margin:0 0 6px}
+.meta{color:var(--muted);margin:0 0 28px}
+.doc h3{display:flex;align-items:baseline;gap:12px;font-size:20px;margin:40px 0 10px;scroll-margin-top:20px}
+.doc h3 .n{flex:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--lilac);color:var(--violet);font-size:14px;font-weight:700;transform:translateY(-2px)}
+.doc ul{padding-left:20px}.doc li{margin:7px 0}.doc li::marker{color:var(--violet)}
+.danger{border-top:1px solid var(--line);padding-top:48px}
+.steps{list-style:none;counter-reset:s;padding:0;margin:12px 0}
+.steps li{counter-increment:s;position:relative;padding:4px 0 14px 48px;margin:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--violet);color:#fff;display:grid;place-items:center;font:700 15px "Sora",sans-serif}
+.steps li:not(:last-child)::after{content:"";position:absolute;left:15px;top:36px;bottom:2px;width:2px;background:var(--line)}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.box .mail{display:inline-block;margin-top:12px;background:var(--violet);color:#fff;text-decoration:none;font-weight:600;padding:10px 18px;border-radius:10px}
+.box.warn{background:color-mix(in srgb,var(--red) 8%,var(--card));border-color:color-mix(in srgb,var(--red) 35%,transparent)}
+.box.warn strong{color:var(--red)}
+.support{background:var(--deep);color:#fff;border-radius:24px;padding:36px 32px}
+.support h2{margin:0 0 6px;font-size:26px}.support p{color:#D9D2FF;margin:0 0 20px}
+.support .btn{background:#fff;color:var(--deep);word-break:break-all}
+footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
+@media (max-width:860px){.layout{grid-template-columns:1fr;gap:8px;padding-top:32px}.toc{position:static;margin-bottom:16px}.toc ol{columns:2;column-gap:16px}.hero{padding:104px 20px 120px}.pulse{height:80px;bottom:8px}.support{padding:28px 22px}}
+@media (max-width:480px){.toc ol{columns:1}}
+</style>
+</head>
+<body class="es">
+<header class="top">
+  <a class="logo" href="#"><svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8B6CFF"/><stop offset="1" stop-color="#4B2BD6"/></linearGradient></defs><rect width="40" height="40" rx="11" fill="url(#g)"/><path d="M7 23h7l3-8 5 14 4-10 2 4h5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Impulso</span></a>
+  <div class="seg" role="group" aria-label="Idioma / Language"><button id="b-es" class="on" onclick="setLang('es')">ES</button><button id="b-en" onclick="setLang('en')">EN</button></div>
+</header>
+<div id="privacidad"></div><div id="eliminar-cuenta"></div>
+
+<div class="lang-block" data-l="es">
+  <section class="hero"><svg class="pulse" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 H380 L420 110 L450 40 L490 150 L530 20 L570 120 L600 100 H760 L790 70 L820 110 H1200" /></svg>
+    <div class="hero-inner">
+      <h1>Privacidad y tu cuenta</h1>
+      <p class="lead">Cómo cuida Impulso tu información, y cómo borrar tu cuenta cuando quieras.</p>
+      <ul class="promises"><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No vendemos tus datos</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sin publicidad</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Borras tu cuenta cuando quieras</span></li></ul>
+      <div class="jump"><a class="btn light" href="#es-privacy">Política de privacidad</a><a class="btn ghost" href="#es-delete">Eliminar tu cuenta</a></div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="toc">
+      <p class="toc-h">En esta página</p>
+      <ol><li><a href="#es-p1">Datos que recogemos</a></li><li><a href="#es-p2">Detección automática de movimientos (opcional)</a></li><li><a href="#es-p3">Asistente con inteligencia artificial</a></li><li><a href="#es-p4">Para qué usamos tus datos</a></li><li><a href="#es-p5">Dónde se guardan y con quién se comparten</a></li><li><a href="#es-p6">Seguridad</a></li><li><a href="#es-p7">Cuánto tiempo guardamos tus datos</a></li><li><a href="#es-p8">Tus derechos</a></li><li><a href="#es-p9">Menores de edad</a></li><li><a href="#es-p10">Cambios a esta política</a></li><li><a href="#es-p11">Contacto</a></li></ol>
+      <a class="toc-del" href="#es-delete">Eliminar tu cuenta</a>
+    </aside>
+
+    <div class="content">
+      <section class="doc" id="es-privacy">
+        <h2>Política de privacidad</h2>
+        <p class="meta">Vigente desde el 2 de noviembre de 2026</p>
+        
+<p>Esta política explica qué datos usa la aplicación <strong>Impulso</strong> (gestor de finanzas personales para Android), para qué los usa y qué control tienes sobre ellos. Si tienes preguntas, escríbenos a <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a>.</p>
+
+<h3 id="es-p1"><span class="n">1</span>Datos que recogemos</h3>
+<ul>
+  <li><strong>Datos de tu cuenta de Google:</strong> nombre, correo electrónico y un identificador único, que se obtienen cuando inicias sesión con Google. No recibimos tu contraseña.</li>
+  <li><strong>Datos financieros que tú registras:</strong> saldo, movimientos (monto, tipo, categoría, nota y fecha), presupuestos, movimientos recurrentes y categorías propias.</li>
+  <li><strong>Copias de seguridad:</strong> copias de los datos anteriores que la app guarda en tu cuenta (automáticas cada día o cuando tú lo pides).</li>
+  <li><strong>Ajustes de la app en tu celular:</strong> idioma, moneda, tema, recordatorios y preferencias. Se quedan en tu dispositivo.</li>
+  <li><strong>Datos técnicos de seguridad:</strong> la app usa Firebase App Check para comprobar que las solicitudes vienen de la app original. Esto genera señales técnicas del dispositivo que procesa Google.</li>
+</ul>
+
+<h3 id="es-p2"><span class="n">2</span>Detección automática de movimientos (opcional)</h3>
+<p>Si la activas, Impulso lee las notificaciones que llegan a tu celular para detectar alertas de bancos. Funciona así:</p>
+<ul>
+  <li>Las notificaciones de chats y correo se ignoran, igual que los códigos de verificación.</li>
+  <li>De una alerta bancaria solo se toman el <strong>monto</strong>, si es <strong>gasto o ingreso</strong>, la <strong>fecha</strong> y el <strong>nombre de la app</strong> que la envió, y con eso se crea un movimiento en tu cuenta.</li>
+  <li>El texto de tus notificaciones <strong>no se guarda, no se comparte y no se envía al asistente de IA</strong>.</li>
+  <li>Puedes desactivarla en cualquier momento desde la app o desde los ajustes del celular.</li>
+</ul>
+
+<h3 id="es-p3"><span class="n">3</span>Asistente con inteligencia artificial</h3>
+<p>Cuando haces una pregunta al asistente, la app envía tu pregunta y un resumen de tus finanzas (saldo, movimientos, presupuestos y recurrentes) a <strong>Google Gemini</strong>, a través de Firebase AI Logic, para generar la respuesta. Ese procesamiento lo hace Google según sus propios términos y su política de privacidad. Si no usas el asistente, no se envía nada. Las conversaciones no se guardan en tu cuenta. El asistente es orientativo: Impulso no es un asesor financiero y las respuestas pueden contener errores.</p>
+
+<h3 id="es-p4"><span class="n">4</span>Para qué usamos tus datos</h3>
+<ul>
+  <li>Mostrar tu saldo, historial, presupuestos y reportes, y sincronizarlos entre tus dispositivos.</li>
+  <li>Enviarte los avisos que actives (recordatorio diario y avisos de presupuesto).</li>
+  <li>Guardar y restaurar tus copias de seguridad.</li>
+  <li>Responder tus preguntas en el asistente, solo cuando lo usas.</li>
+  <li>Proteger la app contra el uso no autorizado.</li>
+</ul>
+<p><strong>No vendemos tus datos, no mostramos publicidad y no los usamos para perfiles comerciales.</strong></p>
+
+<h3 id="es-p5"><span class="n">5</span>Dónde se guardan y con quién se comparten</h3>
+<p>Tus datos se guardan en <strong>Google Firebase</strong> (Firebase Authentication y Cloud Firestore), en servidores de Google. Google actúa como proveedor de servicios. Solo se comparten con:</p>
+<ul>
+  <li><strong>Google Firebase</strong>: autenticación, base de datos y verificación de la app.</li>
+  <li><strong>Google Gemini</strong>: solo cuando usas el asistente, como se explica arriba.</li>
+</ul>
+<p>Además podríamos revelar datos si una autoridad competente lo exige conforme a la ley.</p>
+
+<h3 id="es-p6"><span class="n">6</span>Seguridad</h3>
+<ul>
+  <li>Toda la comunicación viaja cifrada (HTTPS/TLS).</li>
+  <li>Las reglas de la base de datos solo permiten que cada usuario lea y modifique sus propios datos.</li>
+  <li>Puedes activar el bloqueo de la app con huella, PIN o patrón, y ocultar tu saldo.</li>
+  <li>Con el celular bloqueado, las notificaciones de la app no muestran montos.</li>
+</ul>
+
+<h3 id="es-p7"><span class="n">7</span>Cuánto tiempo guardamos tus datos</h3>
+<ul>
+  <li>Tus datos se conservan mientras tengas tu cuenta.</li>
+  <li>De las copias de seguridad se conservan las últimas 14 diarias y las últimas 3 de seguridad. Las más antiguas se borran solas.</li>
+  <li>Si eliminas tu cuenta, se borran tu perfil, todos tus movimientos, presupuestos, recurrentes, categorías y copias de seguridad. Pueden quedar copias residuales en los sistemas internos de Google durante el tiempo que estos tarden en depurarse.</li>
+</ul>
+
+<h3 id="es-p8"><span class="n">8</span>Tus derechos</h3>
+<p>Puedes consultar, corregir y borrar tus datos en cualquier momento desde la app. También puedes:</p>
+<ul>
+  <li><strong>Eliminar tu cuenta</strong> desde Ajustes → Cuenta → Eliminar mi cuenta, o siguiendo <a href="#es-delete">estas instrucciones</a> sin necesidad de la app.</li>
+  <li>Escribirnos a <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a> para cualquier solicitud sobre tus datos personales. Respondemos en un plazo máximo de 15 días hábiles.</li>
+</ul>
+<p>En Colombia, estos derechos están protegidos por la Ley 1581 de 2012 de protección de datos personales. Si vives en otro país, también tienes los derechos que te reconozca la ley local.</p>
+
+<h3 id="es-p9"><span class="n">9</span>Menores de edad</h3>
+<p>Impulso está dirigido a personas mayores de 18 años. No recogemos datos de menores de forma consciente. Si crees que un menor nos dio sus datos, escríbenos y los borraremos.</p>
+
+<h3 id="es-p10"><span class="n">10</span>Cambios a esta política</h3>
+<p>Si cambiamos esta política, publicaremos la nueva versión en esta página con su fecha. Si el cambio es importante, también te avisaremos dentro de la app.</p>
+
+<h3 id="es-p11"><span class="n">11</span>Contacto</h3>
+<p>Impulso · Colombia<br>Correo: <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a></p>
+
+      </section>
+
+      <section class="doc danger" id="es-delete">
+        <h2>Eliminar tu cuenta</h2>
+        <p class="meta">Puedes borrar tu cuenta y todos sus datos de dos formas.</p>
+        
+
+<h3>Opción 1: desde la app (inmediato)</h3>
+<ol class="steps">
+  <li>Abre Impulso e inicia sesión.</li>
+  <li>Ve a <strong>Ajustes → Cuenta → Eliminar mi cuenta</strong>.</li>
+  <li>Escribe <strong>ELIMINAR</strong> para confirmar.</li>
+  <li>Elige tu cuenta de Google cuando te lo pida, para confirmar que eres tú.</li>
+</ol>
+<p>Todo se borra en ese momento.</p>
+
+<h3>Opción 2: sin la app (por correo)</h3>
+<p>Si ya no tienes la app instalada, escríbenos <strong>desde el mismo correo de Google</strong> con el que usabas Impulso:</p>
+<div class="box">
+  Para: <strong>impulso.soporte.v1@gmail.com</strong><br>
+  Asunto: <strong>Eliminar mi cuenta</strong><br>
+  <a class="mail" href="mailto:impulso.soporte.v1@gmail.com?subject=Eliminar%20mi%20cuenta&amp;body=Quiero%20eliminar%20mi%20cuenta%20de%20Impulso%20y%20todos%20mis%20datos.">Enviar solicitud</a>
+</div>
+<p>Eliminaremos tu cuenta en un plazo máximo de <strong>30 días</strong> y te confirmaremos por correo. Por seguridad, solo atendemos solicitudes enviadas desde el correo de la cuenta.</p>
+
+<h3>Qué se elimina</h3>
+<ul>
+  <li>Tu cuenta de acceso (nombre, correo e identificador).</li>
+  <li>Tu saldo y todos tus movimientos.</li>
+  <li>Presupuestos, recurrentes y categorías propias.</li>
+  <li>Todas tus copias de seguridad.</li>
+</ul>
+
+<h3>Qué se conserva</h3>
+<p>No conservamos ninguno de tus datos. Pueden quedar copias residuales en los sistemas internos de nuestro proveedor (Google Firebase) durante el tiempo que estos tarden en depurarse.</p>
+
+<div class="box warn"><strong>Importante:</strong> la eliminación es permanente y no se puede deshacer. Si quieres guardar tu información, exporta antes tus reportes a Excel o PDF desde la app.</div>
+
+<p>Más información en nuestra <a href="#es-privacy">política de privacidad</a>.</p>
+
+      </section>
+
+      <section class="support">
+        <h2>¿Tienes una pregunta sobre tus datos?</h2>
+        <p>Escríbenos y te respondemos en un máximo de 15 días hábiles.</p>
+        <a class="btn" href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a>
+      </section>
+    </div>
+  </div>
+</div>
+<div class="lang-block" data-l="en">
+  <section class="hero"><svg class="pulse" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 H380 L420 110 L450 40 L490 150 L530 20 L570 120 L600 100 H760 L790 70 L820 110 H1200" /></svg>
+    <div class="hero-inner">
+      <h1>Privacy and your account</h1>
+      <p class="lead">How Impulso looks after your information, and how to delete your account whenever you want.</p>
+      <ul class="promises"><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We never sell your data</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No ads</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delete your account anytime</span></li></ul>
+      <div class="jump"><a class="btn light" href="#en-privacy">Privacy Policy</a><a class="btn ghost" href="#en-delete">Delete your account</a></div>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="toc">
+      <p class="toc-h">On this page</p>
+      <ol><li><a href="#en-p1">Data we collect</a></li><li><a href="#en-p2">Automatic transaction detection (optional)</a></li><li><a href="#en-p3">AI assistant</a></li><li><a href="#en-p4">How we use your data</a></li><li><a href="#en-p5">Where data is stored and who it is shared with</a></li><li><a href="#en-p6">Security</a></li><li><a href="#en-p7">How long we keep your data</a></li><li><a href="#en-p8">Your rights</a></li><li><a href="#en-p9">Children</a></li><li><a href="#en-p10">Changes to this policy</a></li><li><a href="#en-p11">Contact</a></li></ol>
+      <a class="toc-del" href="#en-delete">Delete your account</a>
+    </aside>
+
+    <div class="content">
+      <section class="doc" id="en-privacy">
+        <h2>Privacy Policy</h2>
+        <p class="meta">Effective November 2, 2026</p>
+        
+<p>This policy explains what data the <strong>Impulso</strong> app (a personal finance manager for Android) uses, why it uses it, and what control you have over it. If you have questions, write to <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a>.</p>
+
+<h3 id="en-p1"><span class="n">1</span>Data we collect</h3>
+<ul>
+  <li><strong>Google account data:</strong> name, email address and a unique identifier, obtained when you sign in with Google. We never receive your password.</li>
+  <li><strong>Financial data you enter:</strong> balance, transactions (amount, type, category, note and date), budgets, recurring transactions and custom categories.</li>
+  <li><strong>Backups:</strong> copies of the data above that the app stores in your account (automatically every day or when you ask).</li>
+  <li><strong>App settings on your phone:</strong> language, currency, theme, reminders and preferences. They stay on your device.</li>
+  <li><strong>Technical security data:</strong> the app uses Firebase App Check to verify that requests come from the genuine app. This produces technical device signals processed by Google.</li>
+</ul>
+
+<h3 id="en-p2"><span class="n">2</span>Automatic transaction detection (optional)</h3>
+<p>If you turn it on, Impulso reads the notifications on your phone to detect bank alerts. It works like this:</p>
+<ul>
+  <li>Notifications from chat and email apps are ignored, as are verification codes.</li>
+  <li>From a bank alert, only the <strong>amount</strong>, whether it is an <strong>expense or income</strong>, the <strong>date</strong> and the <strong>name of the app</strong> that sent it are taken, and a transaction is created in your account.</li>
+  <li>The text of your notifications is <strong>not stored, not shared and not sent to the AI assistant</strong>.</li>
+  <li>You can turn it off at any time in the app or in your phone settings.</li>
+</ul>
+
+<h3 id="en-p3"><span class="n">3</span>AI assistant</h3>
+<p>When you ask the assistant a question, the app sends your question and a summary of your finances (balance, transactions, budgets and recurring items) to <strong>Google Gemini</strong>, through Firebase AI Logic, to generate the answer. Google processes this under its own terms and privacy policy. If you don't use the assistant, nothing is sent. Conversations are not saved to your account. The assistant is for guidance only: Impulso is not a financial advisor and answers may contain errors.</p>
+
+<h3 id="en-p4"><span class="n">4</span>How we use your data</h3>
+<ul>
+  <li>To show your balance, history, budgets and reports, and sync them across your devices.</li>
+  <li>To send the alerts you turn on (daily reminder and budget alerts).</li>
+  <li>To save and restore your backups.</li>
+  <li>To answer your questions in the assistant, only when you use it.</li>
+  <li>To protect the app against unauthorized use.</li>
+</ul>
+<p><strong>We do not sell your data, we do not show ads, and we do not use it for commercial profiling.</strong></p>
+
+<h3 id="en-p5"><span class="n">5</span>Where data is stored and who it is shared with</h3>
+<p>Your data is stored in <strong>Google Firebase</strong> (Firebase Authentication and Cloud Firestore), on Google servers. Google acts as a service provider. Data is only shared with:</p>
+<ul>
+  <li><strong>Google Firebase</strong>: authentication, database and app verification.</li>
+  <li><strong>Google Gemini</strong>: only when you use the assistant, as explained above.</li>
+</ul>
+<p>We may also disclose data if a competent authority requires it under the law.</p>
+
+<h3 id="en-p6"><span class="n">6</span>Security</h3>
+<ul>
+  <li>All communication is encrypted (HTTPS/TLS).</li>
+  <li>Database rules only allow each user to read and change their own data.</li>
+  <li>You can turn on an app lock with fingerprint, PIN or pattern, and hide your balance.</li>
+  <li>When your phone is locked, the app's notifications don't show amounts.</li>
+</ul>
+
+<h3 id="en-p7"><span class="n">7</span>How long we keep your data</h3>
+<ul>
+  <li>Your data is kept while you have your account.</li>
+  <li>For backups, the last 14 daily ones and the last 3 safety ones are kept. Older ones are deleted automatically.</li>
+  <li>If you delete your account, your profile, all your transactions, budgets, recurring items, categories and backups are deleted. Residual copies may remain in Google's internal systems for as long as they take to be purged.</li>
+</ul>
+
+<h3 id="en-p8"><span class="n">8</span>Your rights</h3>
+<p>You can view, correct and delete your data at any time in the app. You can also:</p>
+<ul>
+  <li><strong>Delete your account</strong> from Settings → Account → Delete my account, or by following <a href="#en-delete">these instructions</a> without the app.</li>
+  <li>Write to <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a> for any request about your personal data. We reply within 15 business days.</li>
+</ul>
+<p>In Colombia, these rights are protected by Law 1581 of 2012 on personal data protection. If you live in another country, you also have the rights granted by your local law.</p>
+
+<h3 id="en-p9"><span class="n">9</span>Children</h3>
+<p>Impulso is intended for people aged 18 or over. We do not knowingly collect data from minors. If you believe a minor has given us their data, contact us and we will delete it.</p>
+
+<h3 id="en-p10"><span class="n">10</span>Changes to this policy</h3>
+<p>If we change this policy, we will publish the new version on this page with its date. If the change is significant, we will also let you know in the app.</p>
+
+<h3 id="en-p11"><span class="n">11</span>Contact</h3>
+<p>Impulso · Colombia<br>Email: <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a></p>
+
+      </section>
+
+      <section class="doc danger" id="en-delete">
+        <h2>Delete your account</h2>
+        <p class="meta">You can delete your account and all its data in two ways.</p>
+        
+
+<h3>Option 1: in the app (immediate)</h3>
+<ol class="steps">
+  <li>Open Impulso and sign in.</li>
+  <li>Go to <strong>Settings → Account → Delete my account</strong>.</li>
+  <li>Type <strong>DELETE</strong> to confirm.</li>
+  <li>Choose your Google account when asked, to confirm it's you.</li>
+</ol>
+<p>Everything is deleted right away.</p>
+
+<h3>Option 2: without the app (by email)</h3>
+<p>If you no longer have the app installed, write to us <strong>from the same Google email</strong> you used with Impulso:</p>
+<div class="box">
+  To: <strong>impulso.soporte.v1@gmail.com</strong><br>
+  Subject: <strong>Delete my account</strong><br>
+  <a class="mail" href="mailto:impulso.soporte.v1@gmail.com?subject=Delete%20my%20account&amp;body=I%20want%20to%20delete%20my%20Impulso%20account%20and%20all%20my%20data.">Send request</a>
+</div>
+<p>We will delete your account within <strong>30 days</strong> at most and confirm by email. For security, we only handle requests sent from the account's email address.</p>
+
+<h3>What is deleted</h3>
+<ul>
+  <li>Your sign-in account (name, email and identifier).</li>
+  <li>Your balance and all your transactions.</li>
+  <li>Budgets, recurring items and custom categories.</li>
+  <li>All your backups.</li>
+</ul>
+
+<h3>What is kept</h3>
+<p>We keep none of your data. Residual copies may remain in our provider's internal systems (Google Firebase) for as long as they take to be purged.</p>
+
+<div class="box warn"><strong>Important:</strong> deletion is permanent and cannot be undone. If you want to keep your information, export your reports to Excel or PDF from the app first.</div>
+
+<p>More information in our <a href="#en-privacy">privacy policy</a>.</p>
+
+      </section>
+
+      <section class="support">
+        <h2>Have a question about your data?</h2>
+        <p>Write to us and we will reply within 15 business days.</p>
+        <a class="btn" href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a>
+      </section>
+    </div>
+  </div>
+</div>
+<footer>© 2026 Impulso · Colombia</footer>
+<script>
+function setLang(l){document.body.className=l;document.documentElement.lang=l;
+document.getElementById('b-es').className=l==='es'?'on':'';document.getElementById('b-en').className=l==='en'?'on':'';}
+var q=new URLSearchParams(location.search).get('lang');
+setLang(q==='en'||q==='es'?q:((navigator.language||'es').toLowerCase().indexOf('es')===0?'es':'en'));
+// Enlaces de Google Play: #privacidad y #eliminar-cuenta llevan a la sección en el idioma activo
+function go(){var h=location.hash,l=document.body.className;
+if(h==='#privacidad'||h==='#privacy')document.getElementById(l+'-privacy').scrollIntoView();
+if(h==='#eliminar-cuenta'||h==='#delete-account')document.getElementById(l+'-delete').scrollIntoView();}
+window.addEventListener('load',go);window.addEventListener('hashchange',go);
+</script>
+</body>
+</html>
