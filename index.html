@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Impulso · Privacidad y cuenta</title>
-<meta name="description" content="Política de privacidad de Impulso y cómo eliminar tu cuenta.">
+<meta name="description" content="Política de privacidad de Impulso (finanzas personales con Pipe, tu asistente por voz) y cómo eliminar tu cuenta.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -24,11 +24,17 @@ h1,h2,h3{font-family:"Sora",system-ui,sans-serif;letter-spacing:-.02em;line-heig
 .seg button{border:0;background:transparent;color:#fff;font:600 14px "DM Sans",sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;opacity:.8}
 .seg button.on{background:#fff;color:var(--deep);opacity:1}
 [data-l]{display:none}body.es [data-l="es"],body.en [data-l="en"]{display:block}
-.hero{position:relative;background:radial-gradient(120% 140% at 85% 0%,#5B3BF0 0%,#2A1E78 45%,#17113F 100%);color:#fff;overflow:hidden;padding:120px 20px 96px}
-.pulse{position:absolute;left:0;right:0;bottom:22px;width:100%;height:120px;opacity:.55}
+.hero{position:relative;background:radial-gradient(120% 140% at 85% 0%,#5B3BF0 0%,#2A1E78 45%,#17113F 100%);color:#fff;overflow:hidden;padding:120px 20px 150px}
+.pulse{position:absolute;left:0;right:0;bottom:10px;width:100%;height:110px;opacity:.5;pointer-events:none}
 .pulse path{fill:none;stroke:#B9A6FF;stroke-width:2.5;stroke-linejoin:round;stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 2.2s .2s cubic-bezier(.6,0,.2,1) forwards;vector-effect:non-scaling-stroke}
 @keyframes draw{to{stroke-dashoffset:0}}
-.hero-inner{position:relative;max-width:1120px;margin:0 auto}
+.hero-inner{position:relative;z-index:1;max-width:1120px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.9fr);gap:48px;align-items:center}
+.glance{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:22px;padding:22px 24px;backdrop-filter:blur(6px)}
+.glance h2{font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:#C9BEFF;margin:0 0 14px}
+.glance ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.glance li{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;line-height:1.45}
+.glance li b{display:block;color:#fff;font-weight:600}.glance li span{color:#CFC7F5;font-size:15px}
+.glance i{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.12);display:grid;place-items:center;font-style:normal;font-size:17px}
 .hero h1{font-size:clamp(34px,6vw,58px);font-weight:700;margin:0 0 14px;max-width:14ch}
 .lead{font-size:clamp(17px,2.2vw,20px);color:#D9D2FF;max-width:52ch;margin:0 0 26px}
 .promises{list-style:none;padding:0;margin:0 0 32px;display:flex;flex-wrap:wrap;gap:10px 22px}
@@ -36,7 +42,7 @@ h1,h2,h3{font-family:"Sora",system-ui,sans-serif;letter-spacing:-.02em;line-heig
 .promises svg{width:22px;height:22px;padding:3px;border-radius:50%;background:rgba(255,255,255,.16);color:#9CF5CF}
 .btn{display:inline-block;background:var(--violet);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:12px}
 .btn.light{background:#fff;color:var(--deep)}
-.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
+.btn.ghost{background:rgba(23,17,63,.55);color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.45)}
 .jump{display:flex;flex-wrap:wrap;gap:12px}
 .layout{max-width:1120px;margin:0 auto;padding:48px 20px 80px;display:grid;grid-template-columns:240px 1fr;gap:56px}
 .toc{position:sticky;top:24px;align-self:start;font-size:15px}
@@ -65,7 +71,7 @@ h1,h2,h3{font-family:"Sora",system-ui,sans-serif;letter-spacing:-.02em;line-heig
 .support h2{margin:0 0 6px;font-size:26px}.support p{color:#D9D2FF;margin:0 0 20px}
 .support .btn{background:#fff;color:var(--deep);word-break:break-all}
 footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
-@media (max-width:860px){.layout{grid-template-columns:1fr;gap:8px;padding-top:32px}.toc{position:static;margin-bottom:16px}.toc ol{columns:2;column-gap:16px}.hero{padding:104px 20px 120px}.pulse{height:80px;bottom:8px}.support{padding:28px 22px}}
+@media (max-width:860px){.hero-inner{grid-template-columns:1fr;gap:28px}.layout{grid-template-columns:1fr;gap:8px;padding-top:32px}.toc{position:static;margin-bottom:16px}.toc ol{columns:2;column-gap:16px}.hero{padding:104px 20px 110px}.pulse{height:70px;bottom:6px}.support{padding:28px 22px}}
 @media (max-width:480px){.toc ol{columns:1}}
 </style>
 </head>
@@ -79,67 +85,103 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
 <div class="lang-block" data-l="es">
   <section class="hero"><svg class="pulse" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 H380 L420 110 L450 40 L490 150 L530 20 L570 120 L600 100 H760 L790 70 L820 110 H1200" /></svg>
     <div class="hero-inner">
-      <h1>Privacidad y tu cuenta</h1>
-      <p class="lead">Cómo cuida Impulso tu información, y cómo borrar tu cuenta cuando quieras.</p>
-      <ul class="promises"><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No vendemos tus datos</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sin publicidad</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Borras tu cuenta cuando quieras</span></li></ul>
-      <div class="jump"><a class="btn light" href="#es-privacy">Política de privacidad</a><a class="btn ghost" href="#es-delete">Eliminar tu cuenta</a></div>
+      <div>
+        <h1>Privacidad y tu cuenta</h1>
+        <p class="lead">Cómo cuida Impulso tu información, qué hace Pipe con lo que le dices y cómo borrar tu cuenta cuando quieras.</p>
+        <ul class="promises"><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No vendemos tus datos</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sin publicidad</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Borras tu cuenta cuando quieras</span></li></ul>
+        <div class="jump"><a class="btn light" href="#es-privacy">Política de privacidad</a><a class="btn ghost" href="#es-delete">Eliminar tu cuenta</a></div>
+      </div>
+      <aside class="glance" aria-label="Lo esencial">
+        <h2>Lo esencial</h2>
+        <ul>
+          <li><i>🔒</i><div><b>Tus datos son solo tuyos</b><span>Cada cuenta solo puede ver su propia información.</span></div></li>
+          <li><i>🎙️</i><div><b>Pipe te escucha solo si tocas el micrófono</b><span>No grabamos ni guardamos tu voz.</span></div></li>
+          <li><i>🏦</i><div><b>Nunca pedimos claves del banco</b><span>Ni números de tarjeta.</span></div></li>
+          <li><i>🗑️</i><div><b>Borras todo en un minuto</b><span>Desde la app o escribiéndonos.</span></div></li>
+        </ul>
+      </aside>
     </div>
   </section>
 
   <div class="layout">
     <aside class="toc">
       <p class="toc-h">En esta página</p>
-      <ol><li><a href="#es-p1">Datos que recogemos</a></li><li><a href="#es-p2">Detección automática de movimientos (opcional)</a></li><li><a href="#es-p3">Asistente con inteligencia artificial</a></li><li><a href="#es-p4">Para qué usamos tus datos</a></li><li><a href="#es-p5">Dónde se guardan y con quién se comparten</a></li><li><a href="#es-p6">Seguridad</a></li><li><a href="#es-p7">Cuánto tiempo guardamos tus datos</a></li><li><a href="#es-p8">Tus derechos</a></li><li><a href="#es-p9">Menores de edad</a></li><li><a href="#es-p10">Cambios a esta política</a></li><li><a href="#es-p11">Contacto</a></li></ol>
+      <ol><li><a href="#es-p1">Datos que recogemos</a></li><li><a href="#es-p2">Tu voz y el micrófono</a></li><li><a href="#es-p3">Pipe, el asistente con IA</a></li><li><a href="#es-p4">Detección de movimientos de tus bancos</a></li><li><a href="#es-p5">Para qué usamos tus datos</a></li><li><a href="#es-p6">Dónde se guardan y con quién se comparten</a></li><li><a href="#es-p7">Seguridad</a></li><li><a href="#es-p8">Cuánto tiempo guardamos tus datos</a></li><li><a href="#es-p9">Tus derechos</a></li><li><a href="#es-p10">Menores de edad</a></li><li><a href="#es-p11">Cambios a esta política</a></li><li><a href="#es-p12">Contacto</a></li></ol>
       <a class="toc-del" href="#es-delete">Eliminar tu cuenta</a>
     </aside>
 
     <div class="content">
       <section class="doc" id="es-privacy">
         <h2>Política de privacidad</h2>
-        <p class="meta">Vigente desde el 2 de noviembre de 2026</p>
-        
+        <p class="meta">Actualizada el 9 de noviembre de 2026</p>
+
 <p>Esta política explica qué datos usa la aplicación <strong>Impulso</strong> (gestor de finanzas personales para Android), para qué los usa y qué control tienes sobre ellos. Si tienes preguntas, escríbenos a <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a>.</p>
 
 <h3 id="es-p1"><span class="n">1</span>Datos que recogemos</h3>
 <ul>
-  <li><strong>Datos de tu cuenta de Google:</strong> nombre, correo electrónico y un identificador único, que se obtienen cuando inicias sesión con Google. No recibimos tu contraseña.</li>
-  <li><strong>Datos financieros que tú registras:</strong> saldo, movimientos (monto, tipo, categoría, nota y fecha), presupuestos, movimientos recurrentes y categorías propias.</li>
+  <li><strong>Datos de tu cuenta:</strong> según cómo entres:
+    <ul>
+      <li><strong>Con Google:</strong> nombre, correo y un identificador único. No recibimos tu contraseña de Google.</li>
+      <li><strong>Con correo:</strong> nombre, correo y un identificador. Tu contraseña la gestiona Firebase Authentication; nosotros nunca la vemos.</li>
+      <li><strong>Como invitado:</strong> solo un identificador anónimo, sin nombre ni correo.</li>
+    </ul>
+  </li>
+  <li><strong>Datos financieros que tú registras:</strong> saldo, movimientos (monto, tipo, categoría, nota y fecha), cuentas (banco, efectivo o billetera digital), tarjetas de crédito (nombre, cupo y lo que debes), transferencias entre cuentas, presupuestos, metas de ahorro, deudas (nombre de la persona y monto), pagos fijos, retos y hábitos, y categorías propias. <strong>No pedimos números de tarjeta, claves del banco ni datos para entrar a tu banco.</strong></li>
   <li><strong>Copias de seguridad:</strong> copias de los datos anteriores que la app guarda en tu cuenta (automáticas cada día o cuando tú lo pides).</li>
+  <li><strong>Estadísticas de uso:</strong> con Firebase Analytics registramos de forma general qué funciones se usan (por ejemplo: "se guardó un movimiento por voz", "se hizo una pregunta a Pipe"), el modelo del celular, la versión de Android y de la app, y el país aproximado. <strong>No registramos montos, notas, nombres de personas ni el contenido de lo que dices.</strong> No recogemos el identificador de publicidad.</li>
+  <li><strong>Reportes de errores:</strong> si la app falla, Firebase Crashlytics envía un reporte técnico (en qué parte del código falló, modelo del celular, versión) junto con el identificador interno de tu cuenta, para poder corregirlo. No incluye tus datos financieros.</li>
   <li><strong>Ajustes de la app en tu celular:</strong> idioma, moneda, tema, recordatorios y preferencias. Se quedan en tu dispositivo.</li>
   <li><strong>Datos técnicos de seguridad:</strong> la app usa Firebase App Check para comprobar que las solicitudes vienen de la app original. Esto genera señales técnicas del dispositivo que procesa Google.</li>
 </ul>
 
-<h3 id="es-p2"><span class="n">2</span>Detección automática de movimientos (opcional)</h3>
-<p>Si la activas, Impulso lee las notificaciones que llegan a tu celular para detectar alertas de bancos. Funciona así:</p>
+<h3 id="es-p2"><span class="n">2</span>Tu voz y el micrófono</h3>
 <ul>
-  <li>Las notificaciones de chats y correo se ignoran, igual que los códigos de verificación.</li>
-  <li>De una alerta bancaria solo se toman el <strong>monto</strong>, si es <strong>gasto o ingreso</strong>, la <strong>fecha</strong> y el <strong>nombre de la app</strong> que la envió, y con eso se crea un movimiento en tu cuenta.</li>
-  <li>El texto de tus notificaciones <strong>no se guarda, no se comparte y no se envía al asistente de IA</strong>.</li>
+  <li>Impulso usa el micrófono <strong>solo cuando tocas el botón del micrófono</strong>, en la app o en el widget. Nunca escucha en segundo plano.</li>
+  <li>Lo que dices lo convierte en texto el servicio de reconocimiento de voz de tu celular (normalmente de Google). <strong>Impulso no graba ni guarda el audio.</strong></li>
+  <li>Si lo que dijiste es un gasto o un ingreso, la app lo entiende en tu propio celular y lo guarda como movimiento. Si es una pregunta o una petición, el texto se envía a Pipe (ver el punto 3).</li>
+  <li>Las respuestas habladas las lee el motor de voz de tu celular.</li>
+</ul>
+
+<h3 id="es-p3"><span class="n">3</span>Pipe, el asistente con IA</h3>
+<p>Pipe es el asistente de Impulso. Cuando le haces una pregunta o le pides algo, la app envía el texto de tu petición y un resumen de tus finanzas (saldo, movimientos recientes, cuentas, tarjetas, presupuestos, metas, deudas y pagos fijos) a <strong>Google Gemini</strong>, a través de Firebase AI Logic, para generar la respuesta. Ese procesamiento lo hace Google según sus propios términos y su política de privacidad.</p>
+<ul>
+  <li>Antes de usarlo por primera vez te pedimos tu aceptación. Si no usas a Pipe, no se envía nada.</li>
+  <li>Pipe puede <strong>hacer cosas que tú le pides</strong>, como registrar un movimiento, crear un presupuesto, una meta, una cuenta o una deuda. Siempre puedes revisarlas, editarlas o borrarlas en la app.</li>
+  <li>Las conversaciones no se guardan en tu cuenta. Hay un límite diario de preguntas por persona.</li>
+  <li>Pipe es orientativo: Impulso no es un asesor financiero y las respuestas pueden contener errores.</li>
+</ul>
+
+<h3 id="es-p4"><span class="n">4</span>Detección de movimientos de tus bancos (opcional)</h3>
+<p>Si la activas, Impulso lee las notificaciones que llegan a tu celular para detectar alertas de bancos y billeteras (por ejemplo Bancolombia, Nequi, Davivienda o DaviPlata). Funciona así:</p>
+<ul>
+  <li>Las notificaciones de chats y correo se ignoran, igual que los códigos de verificación y la publicidad.</li>
+  <li>De una alerta bancaria solo se toman el <strong>monto</strong>, si es <strong>gasto o ingreso</strong>, la <strong>fecha</strong> y el <strong>nombre del banco</strong>, y con eso se crea el movimiento, o te lo mostramos para que decidas si guardarlo.</li>
+  <li>El texto de tus notificaciones <strong>no se guarda en la nube, no se comparte y no se envía a Pipe</strong>.</li>
   <li>Puedes desactivarla en cualquier momento desde la app o desde los ajustes del celular.</li>
 </ul>
 
-<h3 id="es-p3"><span class="n">3</span>Asistente con inteligencia artificial</h3>
-<p>Cuando haces una pregunta al asistente, la app envía tu pregunta y un resumen de tus finanzas (saldo, movimientos, presupuestos y recurrentes) a <strong>Google Gemini</strong>, a través de Firebase AI Logic, para generar la respuesta. Ese procesamiento lo hace Google según sus propios términos y su política de privacidad. Si no usas el asistente, no se envía nada. Las conversaciones no se guardan en tu cuenta. El asistente es orientativo: Impulso no es un asesor financiero y las respuestas pueden contener errores.</p>
-
-<h3 id="es-p4"><span class="n">4</span>Para qué usamos tus datos</h3>
+<h3 id="es-p5"><span class="n">5</span>Para qué usamos tus datos</h3>
 <ul>
-  <li>Mostrar tu saldo, historial, presupuestos y reportes, y sincronizarlos entre tus dispositivos.</li>
-  <li>Enviarte los avisos que actives (recordatorio diario y avisos de presupuesto).</li>
+  <li>Mostrar tu saldo, historial, cuentas, tarjetas, presupuestos, metas, deudas y reportes, y sincronizarlos entre tus dispositivos.</li>
+  <li>Enviarte los avisos que actives: recordatorio diario, pagos fijos, deudas, presupuestos y retos.</li>
   <li>Guardar y restaurar tus copias de seguridad.</li>
-  <li>Responder tus preguntas en el asistente, solo cuando lo usas.</li>
+  <li>Responder tus preguntas y hacer lo que le pidas a Pipe, solo cuando lo usas.</li>
+  <li>Entender qué funciones se usan más y corregir errores, para mejorar la app.</li>
   <li>Proteger la app contra el uso no autorizado.</li>
 </ul>
 <p><strong>No vendemos tus datos, no mostramos publicidad y no los usamos para perfiles comerciales.</strong></p>
 
-<h3 id="es-p5"><span class="n">5</span>Dónde se guardan y con quién se comparten</h3>
-<p>Tus datos se guardan en <strong>Google Firebase</strong> (Firebase Authentication y Cloud Firestore), en servidores de Google. Google actúa como proveedor de servicios. Solo se comparten con:</p>
+<h3 id="es-p6"><span class="n">6</span>Dónde se guardan y con quién se comparten</h3>
+<p>Tus datos se guardan en <strong>Google Firebase</strong>, en servidores de Google. Google actúa como proveedor de servicios. Solo se comparten con:</p>
 <ul>
-  <li><strong>Google Firebase</strong>: autenticación, base de datos y verificación de la app.</li>
-  <li><strong>Google Gemini</strong>: solo cuando usas el asistente, como se explica arriba.</li>
+  <li><strong>Google Firebase:</strong> inicio de sesión (Authentication), base de datos (Cloud Firestore), verificación de la app (App Check), estadísticas de uso (Analytics) y reportes de errores (Crashlytics).</li>
+  <li><strong>Google Gemini:</strong> solo cuando usas a Pipe, como se explica arriba.</li>
+  <li><strong>Servicios de voz de tu celular:</strong> para pasar tu voz a texto y leer las respuestas en voz alta.</li>
+  <li><strong>Google Play:</strong> para avisarte de actualizaciones y dejarte calificar la app.</li>
 </ul>
 <p>Además podríamos revelar datos si una autoridad competente lo exige conforme a la ley.</p>
 
-<h3 id="es-p6"><span class="n">6</span>Seguridad</h3>
+<h3 id="es-p7"><span class="n">7</span>Seguridad</h3>
 <ul>
   <li>Toda la comunicación viaja cifrada (HTTPS/TLS).</li>
   <li>Las reglas de la base de datos solo permiten que cada usuario lea y modifique sus propios datos.</li>
@@ -147,28 +189,31 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
   <li>Con el celular bloqueado, las notificaciones de la app no muestran montos.</li>
 </ul>
 
-<h3 id="es-p7"><span class="n">7</span>Cuánto tiempo guardamos tus datos</h3>
+<h3 id="es-p8"><span class="n">8</span>Cuánto tiempo guardamos tus datos</h3>
 <ul>
   <li>Tus datos se conservan mientras tengas tu cuenta.</li>
   <li>De las copias de seguridad se conservan las últimas 14 diarias y las últimas 3 de seguridad. Las más antiguas se borran solas.</li>
-  <li>Si eliminas tu cuenta, se borran tu perfil, todos tus movimientos, presupuestos, recurrentes, categorías y copias de seguridad. Pueden quedar copias residuales en los sistemas internos de Google durante el tiempo que estos tarden en depurarse.</li>
+  <li><strong>Modo invitado:</strong> si sales de la app sin guardar tu cuenta, tus datos se borran en ese momento.</li>
+  <li>Las estadísticas de uso y los reportes de errores se conservan por el tiempo que define Firebase (las estadísticas, como máximo 14 meses; los reportes de errores, unos 90 días).</li>
+  <li>Si eliminas tu cuenta, se borran tu perfil y todos tus datos financieros y copias de seguridad. Pueden quedar copias residuales en los sistemas internos de Google durante el tiempo que estos tarden en depurarse.</li>
 </ul>
 
-<h3 id="es-p8"><span class="n">8</span>Tus derechos</h3>
+<h3 id="es-p9"><span class="n">9</span>Tus derechos</h3>
 <p>Puedes consultar, corregir y borrar tus datos en cualquier momento desde la app. También puedes:</p>
 <ul>
-  <li><strong>Eliminar tu cuenta</strong> desde Ajustes → Cuenta → Eliminar mi cuenta, o siguiendo <a href="#es-delete">estas instrucciones</a> sin necesidad de la app.</li>
+  <li><strong>Exportar</strong> tus movimientos y reportes a Excel o PDF desde la app.</li>
+  <li><strong>Eliminar tu cuenta</strong> desde Más → Ajustes → Cuenta → Eliminar mi cuenta, o siguiendo <a href="#es-delete">estas instrucciones</a> sin necesidad de la app.</li>
   <li>Escribirnos a <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a> para cualquier solicitud sobre tus datos personales. Respondemos en un plazo máximo de 15 días hábiles.</li>
 </ul>
 <p>En Colombia, estos derechos están protegidos por la Ley 1581 de 2012 de protección de datos personales. Si vives en otro país, también tienes los derechos que te reconozca la ley local.</p>
 
-<h3 id="es-p9"><span class="n">9</span>Menores de edad</h3>
+<h3 id="es-p10"><span class="n">10</span>Menores de edad</h3>
 <p>Impulso está dirigido a personas mayores de 18 años. No recogemos datos de menores de forma consciente. Si crees que un menor nos dio sus datos, escríbenos y los borraremos.</p>
 
-<h3 id="es-p10"><span class="n">10</span>Cambios a esta política</h3>
+<h3 id="es-p11"><span class="n">11</span>Cambios a esta política</h3>
 <p>Si cambiamos esta política, publicaremos la nueva versión en esta página con su fecha. Si el cambio es importante, también te avisaremos dentro de la app.</p>
 
-<h3 id="es-p11"><span class="n">11</span>Contacto</h3>
+<h3 id="es-p12"><span class="n">12</span>Contacto</h3>
 <p>Impulso · Colombia<br>Correo: <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a></p>
 
       </section>
@@ -176,19 +221,18 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
       <section class="doc danger" id="es-delete">
         <h2>Eliminar tu cuenta</h2>
         <p class="meta">Puedes borrar tu cuenta y todos sus datos de dos formas.</p>
-        
 
 <h3>Opción 1: desde la app (inmediato)</h3>
 <ol class="steps">
   <li>Abre Impulso e inicia sesión.</li>
-  <li>Ve a <strong>Ajustes → Cuenta → Eliminar mi cuenta</strong>.</li>
+  <li>Ve a <strong>Más → Ajustes → Cuenta → Eliminar mi cuenta</strong>.</li>
   <li>Escribe <strong>ELIMINAR</strong> para confirmar.</li>
-  <li>Elige tu cuenta de Google cuando te lo pida, para confirmar que eres tú.</li>
+  <li>Confirma que eres tú: elige tu cuenta de Google o escribe tu contraseña, según cómo entres. Si usas el modo invitado no te pide nada.</li>
 </ol>
-<p>Todo se borra en ese momento.</p>
+<p>Todo se borra en ese momento. En el modo invitado, cerrar sesión también borra todo.</p>
 
 <h3>Opción 2: sin la app (por correo)</h3>
-<p>Si ya no tienes la app instalada, escríbenos <strong>desde el mismo correo de Google</strong> con el que usabas Impulso:</p>
+<p>Si ya no tienes la app instalada, escríbenos <strong>desde el mismo correo</strong> con el que usabas Impulso:</p>
 <div class="box">
   Para: <strong>impulso.soporte.v1@gmail.com</strong><br>
   Asunto: <strong>Eliminar mi cuenta</strong><br>
@@ -200,12 +244,12 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
 <ul>
   <li>Tu cuenta de acceso (nombre, correo e identificador).</li>
   <li>Tu saldo y todos tus movimientos.</li>
-  <li>Presupuestos, recurrentes y categorías propias.</li>
+  <li>Cuentas, tarjetas, transferencias, presupuestos, metas, deudas, pagos fijos, retos y categorías propias.</li>
   <li>Todas tus copias de seguridad.</li>
 </ul>
 
 <h3>Qué se conserva</h3>
-<p>No conservamos ninguno de tus datos. Pueden quedar copias residuales en los sistemas internos de nuestro proveedor (Google Firebase) durante el tiempo que estos tarden en depurarse.</p>
+<p>No conservamos tus datos financieros. Las estadísticas de uso y los reportes de errores, que no incluyen tus datos financieros, se borran solos según los plazos de Firebase. Pueden quedar copias residuales en los sistemas internos de nuestro proveedor (Google Firebase) durante el tiempo que estos tarden en depurarse.</p>
 
 <div class="box warn"><strong>Importante:</strong> la eliminación es permanente y no se puede deshacer. Si quieres guardar tu información, exporta antes tus reportes a Excel o PDF desde la app.</div>
 
@@ -224,96 +268,135 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
 <div class="lang-block" data-l="en">
   <section class="hero"><svg class="pulse" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 110 H380 L420 110 L450 40 L490 150 L530 20 L570 120 L600 100 H760 L790 70 L820 110 H1200" /></svg>
     <div class="hero-inner">
-      <h1>Privacy and your account</h1>
-      <p class="lead">How Impulso looks after your information, and how to delete your account whenever you want.</p>
-      <ul class="promises"><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We never sell your data</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No ads</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delete your account anytime</span></li></ul>
-      <div class="jump"><a class="btn light" href="#en-privacy">Privacy Policy</a><a class="btn ghost" href="#en-delete">Delete your account</a></div>
+      <div>
+        <h1>Privacy and your account</h1>
+        <p class="lead">How Impulso looks after your information, what Pipe does with what you say, and how to delete your account whenever you want.</p>
+        <ul class="promises"><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>We never sell your data</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>No ads</span></li><li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Delete your account anytime</span></li></ul>
+        <div class="jump"><a class="btn light" href="#en-privacy">Privacy Policy</a><a class="btn ghost" href="#en-delete">Delete your account</a></div>
+      </div>
+      <aside class="glance" aria-label="At a glance">
+        <h2>At a glance</h2>
+        <ul>
+          <li><i>🔒</i><div><b>Your data is only yours</b><span>Each account can only see its own information.</span></div></li>
+          <li><i>🎙️</i><div><b>Pipe only listens when you tap the mic</b><span>We never record or store your voice.</span></div></li>
+          <li><i>🏦</i><div><b>We never ask for bank passwords</b><span>Or card numbers.</span></div></li>
+          <li><i>🗑️</i><div><b>Delete everything in a minute</b><span>From the app or by emailing us.</span></div></li>
+        </ul>
+      </aside>
     </div>
   </section>
 
   <div class="layout">
     <aside class="toc">
       <p class="toc-h">On this page</p>
-      <ol><li><a href="#en-p1">Data we collect</a></li><li><a href="#en-p2">Automatic transaction detection (optional)</a></li><li><a href="#en-p3">AI assistant</a></li><li><a href="#en-p4">How we use your data</a></li><li><a href="#en-p5">Where data is stored and who it is shared with</a></li><li><a href="#en-p6">Security</a></li><li><a href="#en-p7">How long we keep your data</a></li><li><a href="#en-p8">Your rights</a></li><li><a href="#en-p9">Children</a></li><li><a href="#en-p10">Changes to this policy</a></li><li><a href="#en-p11">Contact</a></li></ol>
+      <ol><li><a href="#en-p1">Data we collect</a></li><li><a href="#en-p2">Your voice and the microphone</a></li><li><a href="#en-p3">Pipe, the AI assistant</a></li><li><a href="#en-p4">Bank transaction detection</a></li><li><a href="#en-p5">How we use your data</a></li><li><a href="#en-p6">Where data is stored and who it is shared with</a></li><li><a href="#en-p7">Security</a></li><li><a href="#en-p8">How long we keep your data</a></li><li><a href="#en-p9">Your rights</a></li><li><a href="#en-p10">Children</a></li><li><a href="#en-p11">Changes to this policy</a></li><li><a href="#en-p12">Contact</a></li></ol>
       <a class="toc-del" href="#en-delete">Delete your account</a>
     </aside>
 
     <div class="content">
       <section class="doc" id="en-privacy">
         <h2>Privacy Policy</h2>
-        <p class="meta">Effective November 2, 2026</p>
-        
+        <p class="meta">Updated November 9, 2026</p>
+
 <p>This policy explains what data the <strong>Impulso</strong> app (a personal finance manager for Android) uses, why it uses it, and what control you have over it. If you have questions, write to <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a>.</p>
 
 <h3 id="en-p1"><span class="n">1</span>Data we collect</h3>
 <ul>
-  <li><strong>Google account data:</strong> name, email address and a unique identifier, obtained when you sign in with Google. We never receive your password.</li>
-  <li><strong>Financial data you enter:</strong> balance, transactions (amount, type, category, note and date), budgets, recurring transactions and custom categories.</li>
+  <li><strong>Account data</strong>, depending on how you sign in:
+    <ul>
+      <li><strong>With Google:</strong> name, email address and a unique identifier. We never receive your Google password.</li>
+      <li><strong>With email:</strong> name, email address and an identifier. Your password is handled by Firebase Authentication; we never see it.</li>
+      <li><strong>As a guest:</strong> only an anonymous identifier, with no name or email.</li>
+    </ul>
+  </li>
+  <li><strong>Financial data you enter:</strong> balance, transactions (amount, type, category, note and date), accounts (bank, cash or digital wallet), credit cards (name, limit and amount owed), transfers between accounts, budgets, savings goals, debts (person's name and amount), fixed payments, challenges and habits, and custom categories. <strong>We never ask for card numbers, bank passwords or bank login details.</strong></li>
   <li><strong>Backups:</strong> copies of the data above that the app stores in your account (automatically every day or when you ask).</li>
+  <li><strong>Usage statistics:</strong> with Firebase Analytics we record, in general terms, which features are used (for example "a transaction was saved by voice", "a question was asked to Pipe"), the phone model, Android and app version, and approximate country. <strong>We do not record amounts, notes, people's names or the content of what you say.</strong> We do not collect the advertising ID.</li>
+  <li><strong>Crash reports:</strong> if the app fails, Firebase Crashlytics sends a technical report (where the code failed, phone model, version) together with your account's internal identifier, so we can fix it. It does not include your financial data.</li>
   <li><strong>App settings on your phone:</strong> language, currency, theme, reminders and preferences. They stay on your device.</li>
   <li><strong>Technical security data:</strong> the app uses Firebase App Check to verify that requests come from the genuine app. This produces technical device signals processed by Google.</li>
 </ul>
 
-<h3 id="en-p2"><span class="n">2</span>Automatic transaction detection (optional)</h3>
-<p>If you turn it on, Impulso reads the notifications on your phone to detect bank alerts. It works like this:</p>
+<h3 id="en-p2"><span class="n">2</span>Your voice and the microphone</h3>
 <ul>
-  <li>Notifications from chat and email apps are ignored, as are verification codes.</li>
-  <li>From a bank alert, only the <strong>amount</strong>, whether it is an <strong>expense or income</strong>, the <strong>date</strong> and the <strong>name of the app</strong> that sent it are taken, and a transaction is created in your account.</li>
-  <li>The text of your notifications is <strong>not stored, not shared and not sent to the AI assistant</strong>.</li>
+  <li>Impulso uses the microphone <strong>only when you tap the microphone button</strong>, in the app or on the widget. It never listens in the background.</li>
+  <li>What you say is turned into text by your phone's speech recognition service (usually Google's). <strong>Impulso does not record or store the audio.</strong></li>
+  <li>If you described an expense or income, the app understands it on your own phone and saves it as a transaction. If it is a question or a request, the text is sent to Pipe (see section 3).</li>
+  <li>Spoken answers are read out by your phone's text-to-speech engine.</li>
+</ul>
+
+<h3 id="en-p3"><span class="n">3</span>Pipe, the AI assistant</h3>
+<p>Pipe is Impulso's assistant. When you ask a question or a request, the app sends the text of your request and a summary of your finances (balance, recent transactions, accounts, cards, budgets, goals, debts and fixed payments) to <strong>Google Gemini</strong>, through Firebase AI Logic, to generate the answer. Google processes this under its own terms and privacy policy.</p>
+<ul>
+  <li>We ask for your consent before you use it for the first time. If you don't use Pipe, nothing is sent.</li>
+  <li>Pipe can <strong>do things you ask for</strong>, such as saving a transaction or creating a budget, goal, account or debt. You can always review, edit or delete them in the app.</li>
+  <li>Conversations are not saved to your account. There is a daily question limit per person.</li>
+  <li>Pipe is for guidance only: Impulso is not a financial advisor and answers may contain errors.</li>
+</ul>
+
+<h3 id="en-p4"><span class="n">4</span>Bank transaction detection (optional)</h3>
+<p>If you turn it on, Impulso reads the notifications on your phone to detect alerts from banks and wallets (for example Bancolombia, Nequi, Davivienda or DaviPlata). It works like this:</p>
+<ul>
+  <li>Notifications from chat and email apps are ignored, as are verification codes and ads.</li>
+  <li>From a bank alert, only the <strong>amount</strong>, whether it is an <strong>expense or income</strong>, the <strong>date</strong> and the <strong>bank's name</strong> are taken, and a transaction is created or shown to you so you decide whether to save it.</li>
+  <li>The text of your notifications is <strong>not stored in the cloud, not shared and not sent to Pipe</strong>.</li>
   <li>You can turn it off at any time in the app or in your phone settings.</li>
 </ul>
 
-<h3 id="en-p3"><span class="n">3</span>AI assistant</h3>
-<p>When you ask the assistant a question, the app sends your question and a summary of your finances (balance, transactions, budgets and recurring items) to <strong>Google Gemini</strong>, through Firebase AI Logic, to generate the answer. Google processes this under its own terms and privacy policy. If you don't use the assistant, nothing is sent. Conversations are not saved to your account. The assistant is for guidance only: Impulso is not a financial advisor and answers may contain errors.</p>
-
-<h3 id="en-p4"><span class="n">4</span>How we use your data</h3>
+<h3 id="en-p5"><span class="n">5</span>How we use your data</h3>
 <ul>
-  <li>To show your balance, history, budgets and reports, and sync them across your devices.</li>
-  <li>To send the alerts you turn on (daily reminder and budget alerts).</li>
+  <li>To show your balance, history, accounts, cards, budgets, goals, debts and reports, and sync them across your devices.</li>
+  <li>To send the alerts you turn on: daily reminder, fixed payments, debts, budgets and challenges.</li>
   <li>To save and restore your backups.</li>
-  <li>To answer your questions in the assistant, only when you use it.</li>
+  <li>To answer your questions and do what you ask Pipe, only when you use it.</li>
+  <li>To understand which features are used most and fix errors, so we can improve the app.</li>
   <li>To protect the app against unauthorized use.</li>
 </ul>
 <p><strong>We do not sell your data, we do not show ads, and we do not use it for commercial profiling.</strong></p>
 
-<h3 id="en-p5"><span class="n">5</span>Where data is stored and who it is shared with</h3>
-<p>Your data is stored in <strong>Google Firebase</strong> (Firebase Authentication and Cloud Firestore), on Google servers. Google acts as a service provider. Data is only shared with:</p>
+<h3 id="en-p6"><span class="n">6</span>Where data is stored and who it is shared with</h3>
+<p>Your data is stored in <strong>Google Firebase</strong>, on Google servers. Google acts as a service provider. Data is only shared with:</p>
 <ul>
-  <li><strong>Google Firebase</strong>: authentication, database and app verification.</li>
-  <li><strong>Google Gemini</strong>: only when you use the assistant, as explained above.</li>
+  <li><strong>Google Firebase:</strong> sign-in (Authentication), database (Cloud Firestore), app verification (App Check), usage statistics (Analytics) and crash reports (Crashlytics).</li>
+  <li><strong>Google Gemini:</strong> only when you use Pipe, as explained above.</li>
+  <li><strong>Your phone's voice services:</strong> to turn your voice into text and read answers aloud.</li>
+  <li><strong>Google Play:</strong> to notify you of updates and let you rate the app.</li>
 </ul>
 <p>We may also disclose data if a competent authority requires it under the law.</p>
 
-<h3 id="en-p6"><span class="n">6</span>Security</h3>
+<h3 id="en-p7"><span class="n">7</span>Security</h3>
 <ul>
   <li>All communication is encrypted (HTTPS/TLS).</li>
   <li>Database rules only allow each user to read and change their own data.</li>
-  <li>You can turn on an app lock with fingerprint, PIN or pattern, and hide your balance.</li>
-  <li>When your phone is locked, the app's notifications don't show amounts.</li>
+  <li>You can lock the app with fingerprint, PIN or pattern, and hide your balance.</li>
+  <li>While your phone is locked, the app's notifications don't show amounts.</li>
 </ul>
 
-<h3 id="en-p7"><span class="n">7</span>How long we keep your data</h3>
+<h3 id="en-p8"><span class="n">8</span>How long we keep your data</h3>
 <ul>
   <li>Your data is kept while you have your account.</li>
-  <li>For backups, the last 14 daily ones and the last 3 safety ones are kept. Older ones are deleted automatically.</li>
-  <li>If you delete your account, your profile, all your transactions, budgets, recurring items, categories and backups are deleted. Residual copies may remain in Google's internal systems for as long as they take to be purged.</li>
+  <li>We keep the last 14 daily backups and the last 3 safety backups. Older ones are deleted automatically.</li>
+  <li><strong>Guest mode:</strong> if you sign out without saving your account, your data is deleted at that moment.</li>
+  <li>Usage statistics and crash reports are kept for the periods set by Firebase (statistics up to 14 months; crash reports about 90 days).</li>
+  <li>If you delete your account, your profile and all your financial data and backups are deleted. Residual copies may remain in Google's internal systems for as long as they take to be purged.</li>
 </ul>
 
-<h3 id="en-p8"><span class="n">8</span>Your rights</h3>
+<h3 id="en-p9"><span class="n">9</span>Your rights</h3>
 <p>You can view, correct and delete your data at any time in the app. You can also:</p>
 <ul>
-  <li><strong>Delete your account</strong> from Settings → Account → Delete my account, or by following <a href="#en-delete">these instructions</a> without the app.</li>
-  <li>Write to <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a> for any request about your personal data. We reply within 15 business days.</li>
+  <li><strong>Export</strong> your transactions and reports to Excel or PDF from the app.</li>
+  <li><strong>Delete your account</strong> from More → Settings → Account → Delete my account, or by following <a href="#en-delete">these instructions</a> without the app.</li>
+  <li>Write to <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a> with any request about your personal data. We reply within 15 business days.</li>
 </ul>
-<p>In Colombia, these rights are protected by Law 1581 of 2012 on personal data protection. If you live in another country, you also have the rights granted by your local law.</p>
+<p>In Colombia, these rights are protected by Law 1581 of 2012 on personal data protection. If you live elsewhere, you also have the rights granted by your local law.</p>
 
-<h3 id="en-p9"><span class="n">9</span>Children</h3>
-<p>Impulso is intended for people aged 18 or over. We do not knowingly collect data from minors. If you believe a minor has given us their data, contact us and we will delete it.</p>
+<h3 id="en-p10"><span class="n">10</span>Children</h3>
+<p>Impulso is intended for people aged 18 and over. We do not knowingly collect data from minors. If you believe a minor has given us their data, write to us and we will delete it.</p>
 
-<h3 id="en-p10"><span class="n">10</span>Changes to this policy</h3>
+<h3 id="en-p11"><span class="n">11</span>Changes to this policy</h3>
 <p>If we change this policy, we will publish the new version on this page with its date. If the change is significant, we will also let you know in the app.</p>
 
-<h3 id="en-p11"><span class="n">11</span>Contact</h3>
+<h3 id="en-p12"><span class="n">12</span>Contact</h3>
 <p>Impulso · Colombia<br>Email: <a href="mailto:impulso.soporte.v1@gmail.com">impulso.soporte.v1@gmail.com</a></p>
 
       </section>
@@ -321,19 +404,18 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
       <section class="doc danger" id="en-delete">
         <h2>Delete your account</h2>
         <p class="meta">You can delete your account and all its data in two ways.</p>
-        
 
-<h3>Option 1: in the app (immediate)</h3>
+<h3>Option 1: from the app (immediate)</h3>
 <ol class="steps">
   <li>Open Impulso and sign in.</li>
-  <li>Go to <strong>Settings → Account → Delete my account</strong>.</li>
+  <li>Go to <strong>More → Settings → Account → Delete my account</strong>.</li>
   <li>Type <strong>DELETE</strong> to confirm.</li>
-  <li>Choose your Google account when asked, to confirm it's you.</li>
+  <li>Confirm it's you: choose your Google account or enter your password, depending on how you sign in. Guests are not asked for anything.</li>
 </ol>
-<p>Everything is deleted right away.</p>
+<p>Everything is deleted right away. In guest mode, signing out also deletes everything.</p>
 
 <h3>Option 2: without the app (by email)</h3>
-<p>If you no longer have the app installed, write to us <strong>from the same Google email</strong> you used with Impulso:</p>
+<p>If you no longer have the app installed, write to us <strong>from the same email address</strong> you used with Impulso:</p>
 <div class="box">
   To: <strong>impulso.soporte.v1@gmail.com</strong><br>
   Subject: <strong>Delete my account</strong><br>
@@ -345,12 +427,12 @@ footer{text-align:center;color:var(--muted);font-size:14px;padding:0 20px 40px}
 <ul>
   <li>Your sign-in account (name, email and identifier).</li>
   <li>Your balance and all your transactions.</li>
-  <li>Budgets, recurring items and custom categories.</li>
+  <li>Accounts, cards, transfers, budgets, goals, debts, fixed payments, challenges and custom categories.</li>
   <li>All your backups.</li>
 </ul>
 
 <h3>What is kept</h3>
-<p>We keep none of your data. Residual copies may remain in our provider's internal systems (Google Firebase) for as long as they take to be purged.</p>
+<p>We keep none of your financial data. Usage statistics and crash reports, which don't include your financial data, are deleted automatically under Firebase's retention periods. Residual copies may remain in our provider's internal systems (Google Firebase) for as long as they take to be purged.</p>
 
 <div class="box warn"><strong>Important:</strong> deletion is permanent and cannot be undone. If you want to keep your information, export your reports to Excel or PDF from the app first.</div>
 
